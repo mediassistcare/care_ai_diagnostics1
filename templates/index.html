@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Care AI Diagnostics - Medical Symptom Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="logo d-flex align-items-center">
+                    <div class="logo-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="16" fill="#00d4aa"/>
+                            <path d="M16 8v16M8 16h16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">Care AI Diagnostics</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#" class="nav-link">For business</a>
+                    <a href="#" class="nav-link">Restart assessment</a>
+                    <div class="language-selector">
+                        <span>English</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M4.427 9.573L8 6l3.573 3.573"/>
+                        </svg>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="nav-item active" data-step="1">
+                    <span class="nav-text">Introduction</span>
+                </div>
+                <div class="nav-item" data-step="2">
+                    <span class="nav-text">Patient</span>
+                </div>
+                <div class="nav-item" data-step="3">
+                    <span class="nav-text">Symptoms</span>
+                </div>
+                <div class="nav-item" data-step="4">
+                    <span class="nav-text">Regions</span>
+                </div>
+                <div class="nav-item" data-step="5">
+                    <span class="nav-text">Interview</span>
+                </div>
+                <div class="nav-item" data-step="6">
+                    <span class="nav-text">Results</span>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <button class="back-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg>
+                    Back
+                </button>
+            </div>
+
+            <div class="content-body">
+                <!-- Step 1: Introduction -->
+                <div class="step-content active" id="step-1">
+                    <div class="step-header">
+                        <h1 class="step-title">What sex was originally listed on your birth certificate?</h1>
+                    </div>
+                    
+                    <div class="selection-cards">
+                        <div class="selection-card" data-value="female">
+                            <div class="card-icon">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="32" cy="20" r="12" stroke="#007bff" stroke-width="3" fill="none"/>
+                                    <path d="M32 32v20M26 46h12" stroke="#007bff" stroke-width="3" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="card-label">Female</div>
+                        </div>
+                        
+                        <div class="selection-card" data-value="male">
+                            <div class="card-icon">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                    <circle cx="26" cy="38" r="12" stroke="#007bff" stroke-width="3" fill="none"/>
+                                    <path d="M35 29l14-14M41 15h8v8" stroke="#007bff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="card-label">Male</div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-section">
+                        <a href="#" class="help-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                            </svg>
+                            What should I select?
+                        </a>
+                        <a href="#" class="help-link">Report an issue with this question</a>
+                    </div>
+                </div>
+
+                <!-- Step 2: Age -->
+                <div class="step-content" id="step-2">
+                    <div class="step-header">
+                        <h1 class="step-title">How old are you?</h1>
+                    </div>
+                    
+                    <div class="age-input-section">
+                        <div class="age-input-container">
+                            <input type="number" class="age-input" id="age" min="0" max="120" placeholder="Enter your age">
+                            <span class="age-label">years old</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Medical History -->
+                <div class="step-content" id="step-3">
+                    <div class="step-header">
+                        <h1 class="step-title">Medical History</h1>
+                    </div>
+                    
+                    <div class="history-questions">
+                        <!-- Questions will be populated dynamically -->
+                    </div>
+                </div>
+
+                <!-- Step 4: Symptoms -->
+                <div class="step-content" id="step-4">
+                    <div class="step-header">
+                        <h1 class="step-title">What are your symptoms?</h1>
+                    </div>
+                    
+                    <div class="symptom-search-container">
+                        <div class="symptom-search">
+                            <input type="text" class="form-control" id="symptomInput" placeholder="Type your symptoms...">
+                            <div id="symptomSuggestions" class="suggestions"></div>
+                        </div>
+                        <div id="selectedSymptoms" class="selected-symptoms"></div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Follow-up Questions -->
+                <div class="step-content" id="step-5">
+                    <div class="step-header">
+                        <h1 class="step-title">Additional Information</h1>
+                    </div>
+                    
+                    <div id="followupQuestions" class="followup-questions"></div>
+                </div>
+
+                <!-- Step 6: Results -->
+                <div class="step-content" id="step-6">
+                    <div class="step-header">
+                        <h1 class="step-title">Analysis Results</h1>
+                    </div>
+                    
+                    <div id="analysisResults" class="analysis-results"></div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="navigation-section">
+                <button class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                <button class="btn btn-primary" id="nextBtn">Continue</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
